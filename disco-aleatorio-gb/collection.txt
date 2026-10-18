@@ -1,0 +1,5 @@
+# Una linea por disco, separado por TABULADORES: Artista<TAB>Album<TAB>Formato
+# Formato: 0=vinilo 1=cd 2=casete 3=otro. Las lineas con # se ignoran.
+Radiohead	OK Computer	vinilo
+Bjork	Homogenic	cd
+Nirvana	In Utero	casete

@@ -1,0 +1,40 @@
+DISCO ALEATORIO - VERSION GAME BOY (GBDK-2020)
+==============================================
+Una ROM de Game Boy (.gb) hecha con GBDK. Se ve el disco girando en pantalla.
+
+CONTROLES
+  A ........ elegir al azar              B ........ cambiar entre ALBUM y ARTISTA
+  SELECT ... filtro de formato           START .... menu
+  Menu: arriba/abajo, A abre. Modo, formato, idioma (EN/ES) y tema se cambian con A o izq/der.
+  Lista: arriba/abajo, izq/der = pagina, A abre el disco (A otra vez = borrar), SELECT cambia
+  el orden (reciente, artista, album, formato), B vuelve.
+  Anadir: teclado en pantalla. D-pad mueve, A escribe, B borra, SELECT mayus/minus, START acepta.
+  Primero artista, luego album, luego formato.
+
+TEMAS: clasico y BLOCKY HELL (paleta invertida). Este ultimo se desbloquea anadiendo un disco
+cuyo artista contenga "C418", como en las otras versiones.
+
+COMO OBTENER LA ROM (hay que compilarla; no va precompilada)
+  Opcion A - sin instalar nada (GitHub Actions)
+    1. Crea un repositorio en GitHub y sube el contenido de esta carpeta (en la RAIZ, incluida
+       la carpeta oculta .github).
+    2. Pestana Actions > "Build Game Boy" > ultima ejecucion > Artifacts > DiscoAleatorio-gb.
+    Si no aparece "Build Game Boy": crea el archivo .github/workflows/build.yml y pega
+    PEGAR-EN-GITHUB-build.yml.txt (igual que hiciste con la 3DS).
+  Opcion B - en tu PC (Windows)
+    1. Descarga GBDK-2020 (github.com/gbdk-2020/gbdk-2020/releases, gbdk-win64.zip) y extraelo
+       en C:\gbdk
+    2. Doble clic en compilar.bat  ->  DiscoAleatorio.gb
+  Opcion C - Linux/Mac:  GBDK_HOME=/ruta/a/gbdk make
+
+TU COLECCION
+  Los discos que anades en la consola se guardan en la memoria de la cartucho (SRAM, 8 KB,
+  hasta 170 discos). En emuladores se guarda en un archivo .sav junto a la ROM.
+  Para llevar tu coleccion ya cargada: edita collection.txt (una linea por disco:
+  Artista<TAB>Album<TAB>Formato, con 0=vinilo 1=cd 2=casete 3=otro) y vuelve a compilar.
+  Solo se cargan la primera vez; despues manda la memoria guardada (borra el .sav para recargar).
+
+LIMITES (es una Game Boy)
+  Solo letras ASCII (se quitan los acentos), artista de hasta 19 letras y album de hasta 26.
+  Sin portadas, sin Discogs, sin los 19 idiomas ni los temas de colores.
+  Hace falta una cartucho/flashcart con memoria guardada (MBC1 + RAM con bateria) o un emulador.
